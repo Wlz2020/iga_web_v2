@@ -50,6 +50,33 @@ export const routes = [
             component: () => import('@/views/offers/ourOffers')
           }
         ]
+      },
+      // OurSchool
+      {
+        path: '/school',
+        name: RN.School,
+        children: [
+          {
+            path: '/our-school',
+            name: RN.OurSchool,
+            component: () => import('@/views/school/ourOffers')
+          },
+          {
+            path: '/us-school',
+            name: RN.UsSchool,
+            component: () => import('@/views/school/usSchool')
+          },
+          {
+            path: '/uk-school',
+            name: RN.UkSchool,
+            component: () => import('@/views/school/ukSchool')
+          },
+          {
+            path: '/other-school',
+            name: RN.OtherSchool,
+            component: () => import('@/views/school/otherSchool')
+          },
+        ]
       }
     ]
   }

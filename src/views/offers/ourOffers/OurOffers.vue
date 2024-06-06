@@ -5,7 +5,9 @@ import { Mousewheel, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
-import { ref } from 'vue'
+import { ref , getCurrentInstance, onMounted} from 'vue'
+import { goHome } from '@/helps/go-home'
+import IconClose from '@/components/IconClose.vue'
 import OfferPreview from '@/components/OfferPreview.vue'
 
 import USOfferPreview from './components/USOfferPreview.vue'
@@ -20,10 +22,25 @@ const onSlideChange = (slideRef) => {
   currentIndex.value = index
   bus.emit('bus-offers-slide-active-index', index)
 }
+
+const instance = getCurrentInstance()
+function onGoHome() {
+  const { $router } = instance.proxy
+  goHome($router)
+}
+
+const addFilterBg = ref(false)
+
+onMounted(() => {
+  bus.on('bus-show-menu', (v) => {
+    addFilterBg.value = v
+  })
+})
 </script>
 
 <template>
-  <div class="swiper-box">
+  <div class="swiper-box ani-fadeIn" :class="{ filter6px: addFilterBg }">
+    <IconClose @click="onGoHome()" class="close-icon"></IconClose>
     <swiper
       :modules="modules"
       class="swiper-container"
@@ -74,6 +91,13 @@ const onSlideChange = (slideRef) => {
   display: flex;
   align-items: center;
 
+  .close-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+  }
+
   .slide-item {
     position: relative;
   }
@@ -118,13 +142,13 @@ const onSlideChange = (slideRef) => {
   bottom: 0;
   width: 100%;
   font-family: 'en_font_bold';
-  font-size: 14rem;
+  font-size: 20rem;
   color: #fff;
   opacity: 0.6;
   text-align: center;
 
   .first-arrow {
-    margin-bottom: -10rem;
+    margin-bottom: -20rem;
   }
 }
 </style>

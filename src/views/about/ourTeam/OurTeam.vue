@@ -96,7 +96,7 @@ onMounted(() => {
 })
 </script>
 <template>
-  <div class="our-team-view en_font_bold" :class="{ filter: addFilterBg }">
+  <div class="ani-fadeIn our-team-view en_font_bold" :class="{ filter: addFilterBg }">
     <IconClose @click="onGoHome()" class="close-icon"></IconClose>
     <div class="content">
       <div class="filter-box">

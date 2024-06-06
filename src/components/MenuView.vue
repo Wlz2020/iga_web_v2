@@ -9,6 +9,7 @@ import { toPage } from '@/helps/navigation'
 import { RouterName as RN } from '@/config/router'
 import ImgLogo from '@/assets/image/index/icon_logo.png'
 import OfferPreview from '@/components/OfferPreview.vue'
+import SchoolMap from '@/components/SchoolMap.vue'
 import { usebackHomeFlagStore } from '@/stores/backHome'
 
 const menuStore = useMenuStore()
@@ -16,7 +17,7 @@ const backHomeFlagStore = usebackHomeFlagStore()
 const showModal = ref(false)
 
 function onShowModal(flag) {
-  menuViewRef.value.classList.toggle('ani-fadeIn', flag)
+  menuViewRef.value.classList.toggle('ani-fadeIn-fast', flag)
   showModal.value = flag
   menuStore.changeMenuOpenStatus(flag)
   bus.emit('bus-show-menu', flag)
@@ -67,10 +68,11 @@ const menuViewRef = ref(null)
 const currentMenu = ref(menuTopAreaList[0])
 
 function setInitCurrentMenu() {
-  currentMenu.value = menuTopAreaList[0]
+  currentMenu.value = menuBottomAreaList[1]
 }
 
 function onMouseover(item) {
+  console.log('item=', item)
   currentMenu.value = item
 }
 
@@ -132,7 +134,13 @@ onMounted(() => {
             <IconAdd></IconAdd>
             <IconAdd></IconAdd>
             <div class="menu-contain">
-              <div class="item" v-for="item in menuBottomAreaList" :key="item.name">
+              <div
+                class="item"
+                :class="{ active: item.name === currentMenu.name }"
+                @mouseover="onMouseover(item)"
+                v-for="item in menuBottomAreaList"
+                :key="item.name"
+              >
                 [{{ item.name }}]
               </div>
             </div>
@@ -160,6 +168,10 @@ onMounted(() => {
                 @click="goRouterByName(RN.OurOffers)"
                 class="offer-preview-wrap"
               ></OfferPreview>
+            </template>
+
+            <template v-if="['SCHOOLS'].includes(currentMenu.name)">
+              <SchoolMap @click="goRouterByName(RN.OurSchool)" class="school-map-wrap"></SchoolMap>
             </template>
           </div>
         </div>
@@ -234,8 +246,7 @@ onMounted(() => {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #000;
-  // opacity: 0.8;
+  background-color: rgba(0, 0, 0, 0.85);
   z-index: 1;
 
   .menu-list {
@@ -306,7 +317,6 @@ onMounted(() => {
   .menu-details {
     flex: 2;
     overflow: hidden;
-    // border: 1px solid yellow;
     position: relative;
     display: flex;
     align-items: center;
@@ -365,7 +375,6 @@ onMounted(() => {
 
         &:hover {
           cursor: pointer;
-
           &::before {
             content: 'VIEW MORES';
             font-family: 'en_font_bold';
@@ -380,8 +389,8 @@ onMounted(() => {
             justify-content: center;
             width: calc(100% + 4rem);
             height: calc(100% + 4rem);
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(3px);
           }
         }
       }

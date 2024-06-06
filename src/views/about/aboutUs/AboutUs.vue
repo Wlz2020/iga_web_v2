@@ -31,6 +31,7 @@ const videoViewRef = ref(null)
 const mapper = new Map()
 mapper.set(0, { video: VideoSHUrl, cover: ImgSHCoverUrl })
 mapper.set(1, { video: VideoSZUrl, cover: ImgSZCoverUrl })
+mapper.set(2, { video: VideoSZUrl, cover: ImgSZCoverUrl })
 
 function openVideo(flag) {
   videoViewRef.value.classList.toggle('ani-fadeIn', flag)
@@ -60,7 +61,7 @@ onMounted(() => {
 </script>
 <template>
   <div>
-    <div class="about-us-view" :class="{ filter: addFilterBg }">
+    <div class="about-us-view ani-fadeIn" :class="{ filter: addFilterBg }">
       <IconClose @click="onGoHome()" class="close-icon"></IconClose>
       <div class="content">
         <div class="top">
@@ -85,7 +86,7 @@ onMounted(() => {
 
         <div class="footer ch_font_light">
           <div class="item"><IconAdd></IconAdd> [联系我们]</div>
-          <div class="item" @click="openVideo(0)"><IconAdd></IconAdd> [上海校区]</div>
+          <div class="item" @click="openVideo(2)"><IconAdd></IconAdd> [上海校区]</div>
           <div class="item"><IconAdd></IconAdd> 上海市徐汇区吴兴路277号 吴界808</div>
           <div class="item" @click="openVideo(1)"><IconAdd></IconAdd> [深圳校区]</div>
           <div class="item"><IconAdd></IconAdd> 深圳市南山区南山街道 前海企业公馆8栋</div>

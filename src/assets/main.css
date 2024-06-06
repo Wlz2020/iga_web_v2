@@ -1,5 +1,6 @@
 /* @import './base.css'; */
 @import './font.css';
+@import './ani.css';
 
 * {
   padding: 0;
@@ -37,45 +38,7 @@ img {
   -webkit-filter: blur(15px);
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 100;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-.ani-fadeIn {
-  animation: fadeIn 1.5s ease-in-out;
-}
-
-.ani-fadeOut {
-  animation: fadeOut 1s ease-out;
-}
-
-@keyframes ani-bounce {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(9rem);
-    opacity: 0;
-  }
-}
-
-.arrow-container {
-  animation: ani-bounce 1.3s infinite;
+.filter6px {
+  filter: blur(6px);
+  -webkit-filter: blur(6px);
 }
