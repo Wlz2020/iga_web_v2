@@ -5,7 +5,7 @@ import { Mousewheel, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
-import { ref , getCurrentInstance, onMounted} from 'vue'
+import { ref, getCurrentInstance, onMounted } from 'vue'
 import { goHome } from '@/helps/go-home'
 import IconClose from '@/components/IconClose.vue'
 import OfferPreview from '@/components/OfferPreview.vue'

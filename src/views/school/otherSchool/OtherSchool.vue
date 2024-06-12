@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import AddressView from '../components/AddressView.vue'
-import { schoolName, list } from './hook/other'
+import { list } from './hook/other'
 
 import bus from '@/utils/bus'
 
@@ -31,40 +31,30 @@ onMounted(() => {
         <AddressView :name="'OTHER'" />
       </div>
       <div class="middle">
-        <div class="school school1" @mouseover="onMouseover(schoolName.AALTO_UNIVERSITY)">
+        <div
+          v-for="(item, index) in list"
+          :key="item.school"
+          class="school"
+          :class="'school' + (index + 1)"
+          @mouseover="onMouseover(item.school)"
+        >
           <div class="dot"></div>
-          <div class="name">[{{ schoolName.AALTO_UNIVERSITY }}]</div>
+          <div class="name">[{{ item.school }}]</div>
           <div
-            class="school-tip school1-tip en_font_bold ani-fadeIn"
-            v-if="showTip(schoolName.AALTO_UNIVERSITY)"
-          ></div>
-        </div>
-
-        <div class="school school2" @mouseover="onMouseover(schoolName.SHERIDAN_COLLEGE)">
-          <div class="dot"></div>
-          <div class="name">[{{ schoolName.SHERIDAN_COLLEGE }}]</div>
-          <div
-            class="school-tip school2-tip en_font_bold ani-fadeIn"
-            v-if="showTip(schoolName.SHERIDAN_COLLEGE)"
-          ></div>
-        </div>
-
-        <div class="school school3" @mouseover="onMouseover(schoolName.RMIT)">
-          <div class="dot"></div>
-          <div class="name">[{{ schoolName.RMIT }}]</div>
-          <div
-            class="school-tip school3-tip en_font_bold ani-fadeIn"
-            v-if="showTip(schoolName.RMIT)"
+            class="school-tip en_font_bold ani-fadeIn"
+            :class="'school' + (index + 1) + '-tip'"
+            v-if="showTip(item.school)"
           ></div>
         </div>
       </div>
+
       <div class="right">
         <div class="photo ani-fadeIn">{{ currentSchoolDetails.img }}</div>
         <div class="name ani-fadeIn">
-          <div>{{ currentSchoolDetails.name1 }}</div>
-          <div>{{ currentSchoolDetails.name2 }}</div>
+          <div class="ch_font_bold ch-name">{{ currentSchoolDetails.name1 }}</div>
+          <div class="ch_font_bold en-name">{{ currentSchoolDetails.name2 }}</div>
         </div>
-        <div class="desc ani-fadeIn">{{ currentSchoolDetails.desc }}</div>
+        <div class="ch_font_bold desc">{{ currentSchoolDetails.desc }}</div>
       </div>
     </div>
   </div>
@@ -109,6 +99,8 @@ onMounted(() => {
       flex: 2;
       height: 100%;
       position: relative;
+      margin-right: 30rem;
+      overflow: hidden;
 
       .school {
         position: absolute;
@@ -116,6 +108,7 @@ onMounted(() => {
         align-items: center;
         font-size: 16rem;
         color: #fff;
+        white-space: nowrap;
 
         &:hover {
           cursor: pointer;
@@ -135,7 +128,7 @@ onMounted(() => {
       }
 
       .school-tip {
-        width: 100rem;
+        width: 320rem;
         height: 1rem;
         margin-left: 20rem;
         border: 1rem solid #fff;
@@ -144,26 +137,14 @@ onMounted(() => {
       .school1 {
         top: 40rem;
         left: 40rem;
-
-        .school1-tip {
-          width: 250rem;
-        }
       }
       .school2 {
         top: 185rem;
         left: 220rem;
-
-        .school2-tip {
-          width: 60rem;
-        }
       }
       .school3 {
         bottom: 85rem;
         left: 120rem;
-
-        .school3-tip {
-          width: 280rem;
-        }
       }
     }
     .right {
@@ -180,9 +161,26 @@ onMounted(() => {
         flex: 2;
         border-top: 1rem solid #fff;
         border-bottom: 1rem solid #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 40rem;
+
+        .ch-name {
+          font-size: 20rem;
+        }
+
+        .en-name {
+          font-size: 14rem;
+        }
       }
       .desc {
         flex: 4;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 14rem;
+        padding: 0 40rem;
       }
     }
   }

@@ -2,7 +2,7 @@
 import bus from '@/utils/bus'
 import scrollNumber from '@/helps/scroll-number.js'
 import { onMounted, ref } from 'vue'
-import { list1, listRef } from '../hook/data3'
+import { list1, listRef } from '../hook/other_data'
 
 const list2 = ref(listRef)
 

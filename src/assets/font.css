@@ -34,21 +34,26 @@
 }
 
 .ch_font_light {
+  color: #fff;
   font-family: 'ch_font_light';
 }
 
 .ch_font_bold {
+  color: #fff;
   font-family: 'ch_font_bold';
 }
 
 .en_font_bold {
+  color: #fff;
   font-family: 'en_font_bold';
 }
 
 .samall_lcd_sign_font {
+  color: #fff;
   font-family: 'samall_lcd_sign_font';
 }
 
 .seven_Segment_font {
+  color: #fff;
   font-family: 'seven_Segment_font';
 }
