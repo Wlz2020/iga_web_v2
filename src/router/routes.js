@@ -51,6 +51,19 @@ export const routes = [
           }
         ]
       },
+
+      // service
+      {
+        path: '/service',
+        name: RN.Service,
+        children: [
+          {
+            path: '/our-service',
+            name: RN.OurService,
+            component: () => import('@/views/service/ourService')
+          }
+        ]
+      },
       // OurSchool
       {
         path: '/school',
@@ -59,7 +72,7 @@ export const routes = [
           {
             path: '/our-school',
             name: RN.OurSchool,
-            component: () => import('@/views/school/ourOffers')
+            component: () => import('@/views/school/ourSchool')
           },
           {
             path: '/us-school',

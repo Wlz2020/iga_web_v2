@@ -10,6 +10,7 @@ import { RouterName as RN } from '@/config/router'
 import ImgLogo from '@/assets/image/index/icon_logo.png'
 import OfferPreview from '@/components/OfferPreview.vue'
 import SchoolMap from '@/components/SchoolMap.vue'
+import ServicePreview from '@/components/ServicePreview.vue'
 import { usebackHomeFlagStore } from '@/stores/backHome'
 
 const menuStore = useMenuStore()
@@ -68,11 +69,10 @@ const menuViewRef = ref(null)
 const currentMenu = ref(menuTopAreaList[0])
 
 function setInitCurrentMenu() {
-  currentMenu.value = menuBottomAreaList[1]
+  currentMenu.value = menuTopAreaList[0]
 }
 
 function onMouseover(item) {
-  console.log('item=', item)
   currentMenu.value = item
 }
 
@@ -154,7 +154,7 @@ onMounted(() => {
           <div class="item-box">
             <template v-if="['ABOUT', 'SHOWCASE'].includes(currentMenu.name)">
               <div
-                class="item"
+                class="item ani-fadeIn-fast"
                 v-for="item in currentMenu.items"
                 :key="item.name"
                 @click="goRouterByName(item.routerName)"
@@ -166,12 +166,19 @@ onMounted(() => {
             <template v-if="['OUR OFFERS'].includes(currentMenu.name)">
               <OfferPreview
                 @click="goRouterByName(RN.OurOffers)"
-                class="offer-preview-wrap"
+                class="offer-preview-wrap ani-fadeIn-fast"
               ></OfferPreview>
             </template>
 
+            <template v-if="['OUR SERVICE'].includes(currentMenu.name)">
+              <ServicePreview @click="goRouterByName(RN.OurService)" class="ani-fadeIn-fast" />
+            </template>
+
             <template v-if="['SCHOOLS'].includes(currentMenu.name)">
-              <SchoolMap @click="goRouterByName(RN.OurSchool)" class="school-map-wrap"></SchoolMap>
+              <SchoolMap
+                @click="goRouterByName(RN.OurSchool)"
+                class="school-map-wrap ani-fadeIn-fast"
+              ></SchoolMap>
             </template>
           </div>
         </div>

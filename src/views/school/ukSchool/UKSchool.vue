@@ -48,12 +48,16 @@ onMounted(() => {
         </div>
       </div>
       <div class="right">
-        <div class="photo ani-fadeIn">{{ currentSchoolDetails.img }}</div>
-        <div class="name ani-fadeIn">
-          <div class="ch_font_bold ch-name">{{ currentSchoolDetails.name1 }}</div>
-          <div class="ch_font_bold en-name">{{ currentSchoolDetails.name2 }}</div>
+        <div class="photo ani-fadeIn">
+          <div class="photo-view">
+            <img :src="currentSchoolDetails.img" />
+          </div>
         </div>
-        <div class="ch_font_bold desc">{{ currentSchoolDetails.desc }}</div>
+        <div class="name ani-fadeIn">
+          <div class="ch_font_bold ch-name ch_font_light">{{ currentSchoolDetails.name1 }}</div>
+          <div class="en_font_bold en-name">{{ currentSchoolDetails.name2 }}</div>
+        </div>
+        <div class="desc ch_font_light">{{ currentSchoolDetails.desc }}</div>
       </div>
     </div>
   </div>
@@ -187,7 +191,20 @@ onMounted(() => {
 
       .photo {
         flex: 4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .photo-view {
+          width: 356rem;
+          height: 180rem;
+
+          img {
+            object-fit: cover;
+          }
+        }
       }
+
       .name {
         flex: 2;
         border-top: 1rem solid #fff;
@@ -195,13 +212,14 @@ onMounted(() => {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 0 40rem;
+        padding: 0 20rem;
 
         .ch-name {
           font-size: 20rem;
         }
 
         .en-name {
+          margin-top: 10rem;
           font-size: 14rem;
         }
       }
@@ -211,7 +229,8 @@ onMounted(() => {
         flex-direction: column;
         justify-content: center;
         font-size: 14rem;
-        padding: 0 40rem;
+        padding: 0 20rem;
+        line-height: 25rem;
       }
     }
   }

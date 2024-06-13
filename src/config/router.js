@@ -20,4 +20,7 @@ export const RouterName = Object.freeze({
   UsSchool: 'UsSchool',
   UkSchool: 'UkSchool',
   OtherSchool: 'OtherSchool',
+
+  Service: 'Service',
+  OurService: 'OurService',
 })

@@ -33,7 +33,7 @@ const routerNameMapper = new Map()
 routerNameMapper.set('other', RN.OtherSchool)
 routerNameMapper.set('us', RN.UsSchool)
 routerNameMapper.set('uk', RN.UkSchool)
-routerNameMapper.set('studio', RN.OtherSchool)
+routerNameMapper.set('studio', RN.OurService)
 
 function showTip(v) {
   return currentSchool.value === mapMapper.get(v)
@@ -130,7 +130,6 @@ onMounted(() => {
   height: @modalHeight;
   display: flex;
   align-items: center;
-  border: 1px solid red;
 
   .close-icon {
     position: absolute;
@@ -146,7 +145,6 @@ onMounted(() => {
     align-items: center;
     justify-content: center;
     position: relative;
-    border: 1px solid yellow;
 
     .circle {
       width: @modalHeight;

@@ -53,7 +53,7 @@ const props = defineProps({
     width: 36rem;
     height: 36rem;
     position: absolute;
-    border: 1rem solid transparent;
+    border: 1px solid transparent;
     &:nth-child(1) {
       top: 0;
       left: 0;
@@ -85,7 +85,7 @@ const props = defineProps({
     height: 210rem;
     margin: 36rem;
     border-radius: 100%;
-    border: 1rem solid @borderColor;
+    border: 1px solid @borderColor;
     position: absolute;
     left: calc(50% - 105rem - 36rem);
     top: calc(50% - 105rem - 36rem);
@@ -95,7 +95,7 @@ const props = defineProps({
     position: absolute;
     width: 105rem;
     height: 210rem;
-    border-right: 1rem solid @borderColor;
+    border-right: 1px solid @borderColor;
     position: absolute;
     left: calc(50% - 105rem);
     top: calc(50% - 105rem);
@@ -105,7 +105,7 @@ const props = defineProps({
     position: absolute;
     width: 210rem;
     height: 105rem;
-    border-bottom: 1rem solid @borderColor;
+    border-bottom: 1px solid @borderColor;
     position: absolute;
     position: absolute;
     left: calc(50% - 105rem);
@@ -116,7 +116,7 @@ const props = defineProps({
     width: 100%;
     position: absolute;
     left: 0;
-    font-size: 21rem;
+    font-size: 21px;
     top: 45%;
     color: @borderColor;
     display: flex;
