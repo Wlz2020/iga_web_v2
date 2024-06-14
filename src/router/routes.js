@@ -4,13 +4,11 @@ export const routes = [
   {
     path: '/',
     children: [
-      // 首页
       {
         name: RN.Home,
         path: '',
         component: () => import('@/views/index')
       },
-      // 关于页
       {
         path: '/about',
         name: RN.About,
@@ -27,7 +25,6 @@ export const routes = [
           }
         ]
       },
-      // 作品集
       {
         path: '/works',
         name: RN.Works,
@@ -36,10 +33,14 @@ export const routes = [
             path: '/student-works',
             name: RN.StudentWorks,
             component: () => import('@/views/works/studentWorks')
+          },
+          {
+            path: '/student-works-detail',
+            name: RN.StudentWorksDetail,
+            component: () => import('@/views/works/studentWorks/detail/StudentWorksDetail.vue')
           }
         ]
       },
-      // OurOffers
       {
         path: '/offers',
         name: RN.Offers,
@@ -51,8 +52,6 @@ export const routes = [
           }
         ]
       },
-
-      // service
       {
         path: '/service',
         name: RN.Service,
@@ -64,7 +63,6 @@ export const routes = [
           }
         ]
       },
-      // OurSchool
       {
         path: '/school',
         name: RN.School,

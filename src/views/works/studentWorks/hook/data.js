@@ -20,13 +20,7 @@ export const levels = Object.freeze({
 
 export const studentWorksList = Object.freeze([
   {
-    projectName: 'projectName1',
-    stuName: 'stuName1',
-    time: 'time1',
-    offer: 'offer1',
-    cover: ''
-  },
-  {
+    id: 1,
     img: 'https://file.igagame.com/img/works/student/xs_gallery_1.png',
     name: 'MAYFLY',
     subName: 'CUNXI GAO',
@@ -56,6 +50,7 @@ export const studentWorksList = Object.freeze([
     ]
   },
   {
+    id: 2,
     img: 'https://file.igagame.com/img/works/student/xs_gallery_2.png',
     name: 'CON-SELOR',
     subName: 'CATHERINE LUO',
@@ -86,6 +81,7 @@ export const studentWorksList = Object.freeze([
     three: ['https://file.igagame.com/img/works/student/xs_S2-4.png']
   },
   {
+    id: 3,
     img: 'https://file.igagame.com/img/works/student/xs_gallery_3.png',
     name: 'GUN SMITH',
     subName: 'ROUYU ZHANG',
@@ -111,6 +107,7 @@ export const studentWorksList = Object.freeze([
     three: ['https://file.igagame.com/img/works/student/xs_S3-4.png']
   },
   {
+    id: 4,
     img: 'https://file.igagame.com/img/works/student/xs_gallery_4.png',
     name: 'BLOOD LAKE',
     subName: 'LIU CHANG',
@@ -149,6 +146,7 @@ export const studentWorksList = Object.freeze([
     ]
   },
   {
+    id: 5,
     img: 'https://file.igagame.com/img/works/student/xs_gallery_5.png',
     name: 'STAR WAR - THE FIVE GUARDIANS',
     subName: 'LIU CHANG',
@@ -180,6 +178,7 @@ export const studentWorksList = Object.freeze([
     three: ['https://file.igagame.com/img/works/student/xs_S5-4.png']
   },
   {
+    id: 6,
     img: 'https://file.igagame.com/img/works/student/xs_gallery_6.png',
     name: 'THE WAY HOME',
     subName: 'ZIXUAN HE',
@@ -220,6 +219,7 @@ export const studentWorksList = Object.freeze([
     ]
   },
   {
+    id: 7,
     img: 'https://file.igagame.com/img/works/student/xs_gallery_7.png',
     name: 'DUNHUANG: A LOST TALE OF SPIRITUAL GAME',
     subName: 'RUOCHEN WU',
@@ -250,6 +250,7 @@ export const studentWorksList = Object.freeze([
     ]
   },
   {
+    id: 8,
     img: 'https://file.igagame.com/img/works/student/xs_gallery_8.png',
     name: 'DON’T MAKE IT EXPLOSION',
     subName: 'LIXIN YOU',
@@ -279,6 +280,7 @@ export const studentWorksList = Object.freeze([
     ]
   },
   {
+    id: 9,
     img: 'https://file.igagame.com/img/works/student/xs_gallery_9.png',
     name: 'LITTLE SHOP OF HORRORS',
     subName: 'ZIHE WANG',
@@ -308,6 +310,7 @@ export const studentWorksList = Object.freeze([
     ]
   },
   {
+    id: 10,
     img: 'https://file.igagame.com/img/works/student/xs_gallery_10.png',
     name: 'PUDDINGVERSE',
     subName: 'LI ZHANG',
@@ -340,6 +343,7 @@ export const studentWorksList = Object.freeze([
     three: ['https://file.igagame.com/img/works/student/xs_S10-4.png']
   },
   {
+    id: 11,
     img: 'https://file.igagame.com/img/works/student/xs_gallery_11.png',
     name: 'IMPASSE',
     subName: 'RUIHAO ZHANG',
@@ -370,6 +374,7 @@ export const studentWorksList = Object.freeze([
     ]
   },
   {
+    id: 12,
     img: 'https://file.igagame.com/img/works/student/xs_gallery_12.png',
     name: 'WHITEBRIDGE CAVALRY',
     subName: 'MIKE WU',
