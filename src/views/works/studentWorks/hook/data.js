@@ -196,17 +196,14 @@ export const studentWorksList = Object.freeze([
     two: {
       // isRight:true,
       desc:
-        '- background setting: The story happened in the very far future of an unknown universe, the human races have already extinct, and earth was occupied by robots, they build their own civilization up on the ruins of the previous one.\n' +
+        'background setting: The story happened in the very far future of an unknown universe, the human races have already extinct, and earth was occupied by robots, they build their own civilization up on the ruins of the previous one.\n' +
         '\n' +
         '- the background setting and art concept took references from the game Death Stranding, Detroit: Become Human, Horizon, and TV series West World.\n' +
         '\n' +
         '- The story begins in a robot structure built by a waterfall. Far to the other side of the horizon, there is a tall tower. and one day, the main character, Lucy, felt a strong sense of calling from the tower, and she began to see strange illusions. So she take her friend Rob and sneak out of the “home”, set off on her search for the answers.\n' +
         '\n' +
         'On the way from the town to the tower, Lucy walked through sev- eral different scenes and terrains (see the map), but there are no one out there, only broken human ruins, or some cowardly robot peeking from the dark. Lucy’s goal is to go to the landmark of each area, explore the human remains and their stories.\n' +
-        '\n' +
-        'Finally, she reached to the tower, and in the giant facility beneath it, she saw herself as a human form trapped in a machine, produc- ing energy which support the planet and robot technology. And after knowing all the story, she has to chose between human and robot, live or die.\n' +
-        '\n' +
-        'In a nutshell, the story is about an identity crisis of a little girl raised by a robot. It also shows the conflict between a robot-built utopia and a real human society. Lucy is both human and robot, so what will she do when she learns the truth?',
+        '\n',
       list: [
         'https://file.igagame.com/img/works/student/xs_S6-2.png',
         'https://file.igagame.com/img/works/student/xs_S6-3.png'
