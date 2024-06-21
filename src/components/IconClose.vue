@@ -15,6 +15,7 @@
 
     &::before {
       content: 'CLOSE';
+      font-size: 12rem;
       position: absolute;
       bottom: 30rem;
       left: -35rem;

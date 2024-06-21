@@ -9,6 +9,7 @@ import { goHome } from '@/helps/go-home'
 import IconClose from '@/components/IconClose.vue'
 import StudentWorksDetail from './detail/StudentWorksDetail.vue'
 import bus from '@/utils/bus'
+import { FILE_RESOURCE_IP } from '@/consts/file_resource_ip'
 
 import { studentWorksList, levels } from './hook/data'
 
@@ -114,7 +115,6 @@ onMounted(() => {
           :grabCursor="true"
           :pagination="{ clickable: true }"
           :mousewheel="true"
-          :loop="true"
           @swiper="onSwiper"
           direction="vertical"
           @slideChange="onSlideChange"
@@ -133,7 +133,7 @@ onMounted(() => {
               class="teacher-info-item-box"
             >
               <div class="teacher-info-item">
-                <img :src="teacherItem.img" alt="" srcset="" />
+                <img :src="FILE_RESOURCE_IP + teacherItem.img" alt="" srcset="" />
               </div>
 
               <div

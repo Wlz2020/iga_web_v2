@@ -94,7 +94,7 @@ onMounted(() => {
       </div>
     </div>
 
-    <div class="video-view" ref="videoViewRef" @click.stop="onCloseVideo" v-show="showVideo">
+    <div class="video-view" ref="videoViewRef" @click.stop="onCloseVideo" v-if="false">
       <IconClose class="close-video"></IconClose>
       <video
         @click.stop
@@ -103,6 +103,7 @@ onMounted(() => {
         :loop="true"
         :controls="false"
         :key="videoModel.cover"
+        :muted="true"
       >
         <source :src="videoModel.video" type="video/mp4" />
       </video>
@@ -171,18 +172,18 @@ onMounted(() => {
 
         &:nth-child(2) {
           &:hover {
-            cursor: pointer;
-            width: max-content;
-            border-bottom-color: #fff;
+            // cursor: pointer;
+            // width: max-content;
+            // border-bottom-color: #fff;
             // text-decoration: underline;
           }
         }
 
         &:nth-child(4) {
           &:hover {
-            cursor: pointer;
-            width: max-content;
-            border-bottom-color: #fff;
+            // cursor: pointer;
+            // width: max-content;
+            // border-bottom-color: #fff;
             // text-decoration: underline;
           }
         }

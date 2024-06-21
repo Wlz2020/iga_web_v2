@@ -5,6 +5,9 @@ import { goHome } from '@/helps/go-home'
 import IconClose from '@/components/IconClose.vue'
 import bus from '@/utils/bus'
 
+import ImgArrow from '@/assets/image/common/arrow.png'
+import ImgCheckArrow from '@/assets/image/common/check_arrow.png'
+
 import { list as listRef } from './hook/list'
 
 const addFilterBg = ref(false)
@@ -88,7 +91,7 @@ onMounted(() => {
                 :class="[item.title === currentService.title ? 'active' : 'no-active']"
                 v-if="showTip"
               >
-                <img src="https://file.igagame.com/img/arrow.png" alt="" />
+                <img :src="ImgArrow" alt="" />
               </div>
             </div>
             <div class="line2" v-if="item.show">
@@ -102,7 +105,7 @@ onMounted(() => {
                     :class="{ 'active-line2-item-name': 1 }"
                   >
                     <div class="active-icon" v-if="currentServiceDesc === items.txt">
-                      <img src="https://file.igagame.com/img/check_arrow.png" alt="" />
+                      <img :src="ImgCheckArrow" alt="" />
                     </div>
                     <div
                       class="name ch_font_light"
@@ -241,7 +244,7 @@ onMounted(() => {
 
               .name {
                 border-top: 1px solid #fff;
-                padding: 7rem;
+                padding: 11rem;
                 white-space: nowrap;
                 margin-left: 20rem;
                 font-size: 15rem;
@@ -267,8 +270,8 @@ onMounted(() => {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding-left: 40rem;
-            padding-right: 20rem;
+            padding-left: 20rem;
+            padding-right: 0rem;
 
             .line2-item-txt {
               font-size: 15rem;

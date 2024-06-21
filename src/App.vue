@@ -13,5 +13,6 @@ import MenuView from './components/MenuView.vue'
   position: relative;
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
 }
 </style>

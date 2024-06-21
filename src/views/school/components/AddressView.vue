@@ -116,7 +116,7 @@ const props = defineProps({
     width: 100%;
     position: absolute;
     left: 0;
-    font-size: 21px;
+    font-size: 21rem;
     top: 45%;
     color: @borderColor;
     display: flex;

@@ -1,5 +1,7 @@
 <script setup>
 import { ref } from 'vue'
+import ImgArrow from '@/assets/image/common/arrow.png'
+
 const showTip = ref(false)
 
 function onMouseover(flag) {
@@ -16,7 +18,7 @@ function onMouseover(flag) {
       </div>
       <div class="item item-icon" v-for="item in 5" :key="item">
         <div class="icon ani-fadeIn-fast" v-if="showTip">
-          <img src="https://file.igagame.com/img/arrow.png" alt="" />
+          <img :src="ImgArrow" alt="" />
         </div>
       </div>
     </div>

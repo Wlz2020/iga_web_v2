@@ -19,8 +19,86 @@ function onGoHome() {
   goHome($router)
 }
 
-function onMouseover(v) {
-  currentSchool.value = v
+const circleRef = ref()
+const otherRef = ref()
+const usRef = ref()
+const ukRef = ref()
+const studioRef = ref()
+
+function onMouseover(flag) {
+  currentSchool.value = flag
+
+  if (flag === 'other') {
+    circleRef.value.style.transition = 'transform 1.5s ease-in-out'
+    circleRef.value.style.transform = 'scale(2.8)'
+    circleRef.value.style.transformOrigin = '50% 0%'
+
+    usRef.value.style.transition = 'transform 1.5s ease-in-out'
+    usRef.value.style.transform = 'scale(2.8) translate(150rem, 200rem)'
+
+    ukRef.value.style.transition = 'transform 1.5s ease-in-out'
+    ukRef.value.style.transform = 'scale(2.8) translate(-100rem, 300rem)'
+
+    studioRef.value.style.transition = 'transform 1.5s ease-in-out'
+    studioRef.value.style.transform = 'scale(2.8) translate(200rem, 400rem)'
+  }
+
+  if (flag === 'us') {
+    circleRef.value.style.transition = 'transform 1.5s ease-in-out'
+    circleRef.value.style.transform = 'scale(2.8)'
+    circleRef.value.style.transformOrigin = '100% 50%'
+
+    otherRef.value.style.transition = 'transform 1.5s ease-in-out'
+    otherRef.value.style.transform = 'scale(2.8) translate(-200rem, -200rem)'
+
+    ukRef.value.style.transition = 'transform 1.5s ease-in-out'
+    ukRef.value.style.transform = 'scale(2.8) translate(-350rem, 0rem)'
+
+    studioRef.value.style.transition = 'transform 1.5s ease-in-out'
+    studioRef.value.style.transform = 'scale(2.8) translate(0rem, 200rem)'
+  }
+
+  if (flag === 'uk') {
+    circleRef.value.style.transition = 'transform 1.5s ease-in-out'
+    circleRef.value.style.transform = 'scale(2.8)'
+    circleRef.value.style.transformOrigin = '0% 50%'
+
+    otherRef.value.style.transition = 'transform 1.5s ease-in-out'
+    otherRef.value.style.transform = 'scale(2.8) translate(200rem, -200rem)'
+
+    usRef.value.style.transition = 'transform 1.5s ease-in-out'
+    usRef.value.style.transform = 'scale(2.8) translate(350rem, 0rem)'
+
+    studioRef.value.style.transition = 'transform 1.5s ease-in-out'
+    studioRef.value.style.transform = 'scale(2.8) translate(350rem, 200rem)'
+  }
+
+  if (flag === 'studio') {
+    circleRef.value.style.transition = 'transform 1.5s ease-in-out'
+    circleRef.value.style.transform = 'scale(2.8)'
+    circleRef.value.style.transformOrigin = '50% 100%'
+
+    otherRef.value.style.transition = 'transform 1.5s ease-in-out'
+    otherRef.value.style.transform = 'scale(2.8) translate(0rem, -450rem)'
+
+    usRef.value.style.transition = 'transform 1.5s ease-in-out'
+    usRef.value.style.transform = 'scale(2.8) translate(150rem, -250rem)'
+
+    ukRef.value.style.transition = 'transform 1.5s ease-in-out'
+    ukRef.value.style.transform = 'scale(2.8) translate(-100rem, -200rem)'
+  }
+}
+
+function onMouseout() {
+  currentSchool.value = null
+
+  circleRef.value.style.transition = 'transform 1.5s ease-in-out'
+  circleRef.value.style.transform = ''
+
+  usRef.value.style.transform = ''
+  otherRef.value.style.transform = ''
+  ukRef.value.style.transform = ''
+  studioRef.value.style.transform = ''
 }
 
 const mapMapper = new Map()
@@ -55,63 +133,58 @@ onMounted(() => {
   <div class="ani-fadeIn our-school-view en_font_bold" :class="{ filter: addFilterBg }">
     <IconClose @click="onGoHome()" class="close-icon"></IconClose>
     <div class="content">
-      <div class="circle"></div>
+      <div class="circle" ref="circleRef"></div>
       <div
+        ref="otherRef"
         class="place-dot other-dot en_font_bold"
         @mouseover="onMouseover('other')"
+        @mouseout="onMouseout('other')"
         @click="onClick('other')"
       >
         [OTHERS]
-      </div>
-      <div
-        class="place-tip other-dot-tip en_font_bold ani-fadeIn"
-        v-if="showTip('other')"
-        @click="onClick('other')"
-      >
-        EXPLORE MORE
+        <div v-show="showTip('other')" class="place-tip other-dot-tip en_font_bold ani-fadeIn">
+          EXPLORE MORE
+        </div>
       </div>
 
       <div
         class="place-dot us-dot en_font_bold"
         @mouseover="onMouseover('us')"
+        @mouseout="onMouseout('us')"
         @click="onClick('us')"
+        ref="usRef"
       >
         [U.S.]
-      </div>
-      <div
-        class="place-tip us-dot-tip en_font_bold ani-fadeIn"
-        v-if="showTip('us')"
-        @click="onClick('us')"
-      >
-        EXPLORE MORE
-        <div class="line" v-if="showTip('us')"></div>
+        <div v-show="showTip('us')" class="place-tip other-dot-tip en_font_bold ani-fadeIn">
+          EXPLORE MORE
+        </div>
       </div>
 
       <div
         class="place-dot uk-dot en_font_bold"
         @mouseover="onMouseover('uk')"
+        @mouseout="onMouseout('uk')"
         @click="onClick('uk')"
+        ref="ukRef"
       >
         [U.K.]
-      </div>
-      <div
-        class="place-tip uk-dot-tip en_font_bold ani-fadeIn"
-        v-if="showTip('uk')"
-        @click="onClick('uk')"
-      >
-        EXPLORE MORE
-        <div class="line" v-if="showTip('uk')"></div>
+
+        <div v-show="showTip('uk')" class="place-tip other-dot-tip en_font_bold ani-fadeIn">
+          EXPLORE MORE
+        </div>
       </div>
 
-      <div class="place-dot logo-dot" @mouseover="onMouseover('studio')" @click="onClick('studio')">
-        <img :src="ImgIgaStu" alt="" srcset="" />
-      </div>
       <div
-        class="place-tip studio-dot-tip en_font_bold ani-fadeIn"
-        v-if="showTip('studio')"
+        class="place-dot logo-dot"
+        @mouseover="onMouseover('studio')"
+        @mouseout="onMouseout('studio')"
         @click="onClick('studio')"
+        ref="studioRef"
       >
-        EXPLORE MORE
+        <img :src="ImgIgaStu" alt="" srcset="" />
+        <div v-show="showTip('studio')" class="place-tip other-dot-tip en_font_bold ani-fadeIn">
+          EXPLORE MORE
+        </div>
       </div>
     </div>
   </div>
@@ -150,18 +223,18 @@ onMounted(() => {
       width: @modalHeight;
       height: @modalHeight;
       border-radius: 100%;
-      border: 2rem solid @mainColor;
+      border: 1px solid @mainColor;
     }
 
     .place-dot {
-      font-size: 16rem;
+      font-size: 21rem;
       color: @mainColor;
       position: absolute;
 
       &::before {
         content: '';
         position: absolute;
-        top: 5.5rem;
+        top: 10rem;
         left: -25rem;
         width: 10rem;
         height: 10rem;
@@ -181,7 +254,7 @@ onMounted(() => {
 
     .us-dot {
       top: 200rem;
-      left: 750rem;
+      left: 730rem;
     }
 
     .uk-dot {
@@ -192,138 +265,20 @@ onMounted(() => {
     .logo-dot {
       top: 400rem;
       left: 700rem;
-      width: calc(341rem / 2.5);
+      width: calc(341rem / 2);
     }
   }
 }
 
 .place-tip {
-  font-size: 16rem;
-  color: @mainColor;
-  position: absolute;
-  border-bottom: 1px solid #fff;
+  font-size: 12rem;
+  color: #615757;
+  text-decoration: underline;
+  word-spacing: 5rem;
+  transition: color 1s ease-in-out;
+
   &:hover {
-    cursor: pointer;
-  }
-}
-
-.other-dot-tip {
-  top: 67rem;
-  left: 100rem;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 5rem;
-    right: -30rem;
-    width: 16rem;
-    height: 16rem;
-    background-color: #fff;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 13rem;
-    left: 178rem;
-    width: 225rem;
-    height: 1rem;
-    background-color: #fff;
-  }
-}
-
-.us-dot-tip {
-  top: 107rem;
-  right: 100rem;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 5rem;
-    left: -30rem;
-    width: 16rem;
-    height: 16rem;
-    background-color: #fff;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 13rem;
-    right: 178rem;
-    width: 45rem;
-    height: 1rem;
-    background-color: #fff;
-  }
-
-  .line {
-    position: absolute;
-    width: 110rem;
-    height: 1rem;
-    background-color: #fff;
-    transform: rotate(-43deg);
-    left: -192rem;
-    top: 51rem;
-  }
-}
-
-.uk-dot-tip {
-  top: 360rem;
-  left: 100rem;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 5rem;
-    right: -30rem;
-    width: 16rem;
-    height: 16rem;
-    background-color: #fff;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 13rem;
-    left: 178rem;
-    width: 60rem;
-    height: 1rem;
-    background-color: #fff;
-  }
-
-  .line {
-    position: absolute;
-    width: 100rem;
-    height: 1rem;
-    background-color: #fff;
-    transform: rotate(-34deg);
-    left: 229rem;
-    top: -15rem;
-  }
-}
-
-.studio-dot-tip {
-  top: 398rem;
-  right: 100rem;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 5rem;
-    left: -30rem;
-    width: 16rem;
-    height: 16rem;
-    background-color: #fff;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 13rem;
-    right: 168rem;
-    width: 80rem;
-    height: 1rem;
-    background-color: #fff;
+    color: #fff;
   }
 }
 </style>

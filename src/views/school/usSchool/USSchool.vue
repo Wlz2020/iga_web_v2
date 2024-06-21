@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue'
 import AddressView from '../components/AddressView.vue'
 import { list } from './hook/us'
+import { FILE_RESOURCE_IP } from '@/consts/file_resource_ip'
 
 import bus from '@/utils/bus'
 
@@ -34,7 +35,7 @@ onMounted(() => {
         <div class="middle-box">
           <div class="top">
             <div class="photo">
-              <img :src="currentSchoolDetails.img" />
+              <img :src="FILE_RESOURCE_IP + currentSchoolDetails.img" />
             </div>
           </div>
           <div class="bottom">

@@ -13,7 +13,7 @@ onMounted(() => {
 
 <template>
   <div class="main-view" :class="{ filter: addFilterBg }">
-    <video class="video" :autoplay="true" :loop="true" :controls="false">
+    <video class="video" :autoplay="true" :loop="true" :controls="false" :muted="true">
       <source :src="videoUrl" type="video/mp4" />
     </video>
   </div>

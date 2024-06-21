@@ -6,6 +6,7 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 
 import IconClose from '@/components/IconClose.vue'
+import { FILE_RESOURCE_IP } from '@/consts/file_resource_ip'
 
 import { studentWorksList } from '../hook/data'
 
@@ -45,12 +46,11 @@ function onClick() {
         :grabCursor="true"
         :pagination="{ clickable: true }"
         :mousewheel="true"
-        :loop="true"
         direction="vertical"
       >
         <swiper-slide class="slide-item">
           <div class="bg-img">
-            <img :src="model.one.img" />
+            <img :src="FILE_RESOURCE_IP + model.one.img" />
           </div>
           <div class="content one-content">
             <div class="name">{{ model.one.name }}</div>
@@ -67,53 +67,53 @@ function onClick() {
 
           <div class="right">
             <div class="right-img1">
-              <img :src="model.two.list[0]" />
+              <img :src="FILE_RESOURCE_IP + model.two.list[0]" />
             </div>
             <div class="right-img2">
-              <img :src="model.two.list[1]" />
+              <img :src="FILE_RESOURCE_IP + model.two.list[1]" />
             </div>
           </div>
         </swiper-slide>
         <swiper-slide class="slide-item three-slide-item">
           <template v-if="model.three.length === 1">
             <div class="three-one-bg-img">
-              <img :src="model.three[0]" />
+              <img :src="FILE_RESOURCE_IP + model.three[0]" />
             </div>
           </template>
 
           <template v-if="model.three.length === 2">
             <div class="three-two-bg-img">
-              <img :src="model.three[0]" />
+              <img :src="FILE_RESOURCE_IP + model.three[0]" />
             </div>
             <div class="three-two-bg-img">
-              <img :src="model.three[1]" />
+              <img :src="FILE_RESOURCE_IP + model.three[1]" />
             </div>
           </template>
 
           <template v-if="model.three.length === 3">
             <div class="three-three-bg-img">
-              <img :src="model.three[0]" />
+              <img :src="FILE_RESOURCE_IP + model.three[0]" />
             </div>
             <div class="three-three-bg-img">
-              <img :src="model.three[1]" />
+              <img :src="FILE_RESOURCE_IP + model.three[1]" />
             </div>
             <div class="three-three-bg-img">
-              <img :src="model.three[2]" />
+              <img :src="FILE_RESOURCE_IP + model.three[2]" />
             </div>
           </template>
 
           <template v-if="model.three.length === 4">
             <div class="three-four-bg-img">
-              <img :src="model.three[0]" />
+              <img :src="FILE_RESOURCE_IP + model.three[0]" />
             </div>
             <div class="three-four-bg-img">
-              <img :src="model.three[1]" />
+              <img :src="FILE_RESOURCE_IP + model.three[1]" />
             </div>
             <div class="three-four-bg-img">
-              <img :src="model.three[2]" />
+              <img :src="FILE_RESOURCE_IP + model.three[2]" />
             </div>
             <div class="three-four-bg-img">
-              <img :src="model.three[3]" />
+              <img :src="FILE_RESOURCE_IP + model.three[3]" />
             </div>
           </template>
         </swiper-slide>

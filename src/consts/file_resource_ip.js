@@ -1,0 +1,1 @@
+export const FILE_RESOURCE_IP = import.meta.env.VITE_FILE_RESOURCE_IP;

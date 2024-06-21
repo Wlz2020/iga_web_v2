@@ -219,9 +219,10 @@ onMounted(() => {
       opacity: 0.5;
 
       &::before {
-        content: 'MEMU';
+        content: 'MENU';
         position: absolute;
         bottom: 35rem;
+        font-size: 13rem;
         left: 0;
         width: 100%;
         color: #fff;
