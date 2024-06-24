@@ -15,5 +15,5 @@ export default defineConfig({
   },
   build: setupBuild(),
   // eslint-disable-next-line no-undef
-  base: process.env.NODE_ENV === 'production' ? '/iga_web_v2/' : '/'
+  // base: process.env.NODE_ENV === 'production' ? '/iga_web_v2/' : '/'
 })
