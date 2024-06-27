@@ -36,12 +36,16 @@
   animation: fadeIn 1s ease-in-out;
 }
 
+.ani-fadeIn-slow {
+  animation: fadeIn 1.2s ease-in;
+}
+
 .ani-fadeIn {
   animation: fadeIn 1.5s ease-in-out;
 }
 
 .ani-fadeOutInOut {
-  animation: fadeOutInOut 4s linear infinite;
+  animation: fadeOutInOut 3s ease-in-out infinite;
 }
 
 .ani-fadeOut {
@@ -61,4 +65,13 @@
 
 .arrow-container {
   animation: ani-bounce 1.3s infinite;
+}
+
+.fade-in-hover-white {
+  color: #868686;
+  transition: color 0.9s ease-in-out;
+
+  &:hover {
+    color: #fff;
+  }
 }

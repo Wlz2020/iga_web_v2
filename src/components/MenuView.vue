@@ -37,8 +37,8 @@ const menuTopAreaList = [
         routerName: RN.OurTeam
       },
       {
-        name: 'CONTACH US',
-        routerName: RN.AboutUs
+        name: 'CONTACT US',
+        routerName: RN.ContachUs
       }
     ]
   },
@@ -123,6 +123,7 @@ onMounted(() => {
                 class="item"
                 :class="{ active: item.name === currentMenu.name }"
                 @mouseover="onMouseover(item)"
+                @click="item.name === 'OUR OFFERS' && goRouterByName(RN.OurOffers)"
                 v-for="item in menuTopAreaList"
                 :key="item.name"
               >
@@ -205,7 +206,8 @@ onMounted(() => {
   position: absolute;
   bottom: 0;
   width: 80rem;
-  text-align: center;
+  display: flex;
+  justify-content: center;
   left: calc(50% - (80rem / 2));
   bottom: 5vh;
 
@@ -216,14 +218,13 @@ onMounted(() => {
 
     &:hover {
       cursor: pointer;
-      opacity: 0.5;
 
       &::before {
         content: 'MENU';
         position: absolute;
-        bottom: 35rem;
+        bottom: 30rem;
         font-size: 13rem;
-        left: 0;
+        left: -4rem;
         width: 100%;
         color: #fff;
       }
@@ -233,6 +234,7 @@ onMounted(() => {
   .menu-remove-content-wrap {
     &:hover {
       &::before {
+        left: -12rem;
         content: 'CLOSE';
       }
     }
@@ -360,11 +362,16 @@ onMounted(() => {
 
     .item-box {
       font-size: 15rem;
-      color: #9c9c9c;
       margin-bottom: 8rem;
 
       .item {
+        color: #868686;
         border: 1px solid transparent;
+        width: max-content;
+
+        transition:
+          border-bottom-color 0.9s ease-in-out,
+          color 0.9s ease-in-out;
 
         &:not(&:last-child) {
           margin-bottom: 8rem;
@@ -373,7 +380,6 @@ onMounted(() => {
         &:hover {
           color: #fff;
           cursor: pointer;
-          width: max-content;
           border-bottom-color: #fff;
         }
       }
@@ -383,23 +389,6 @@ onMounted(() => {
 
         &:hover {
           cursor: pointer;
-          &::before {
-            content: 'VIEW MORES';
-            font-family: 'en_font_bold';
-            font-size: 20rem;
-            color: #fff;
-            position: absolute;
-            text-decoration: underline;
-            top: -2rem;
-            left: -2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: calc(100% + 4rem);
-            height: calc(100% + 4rem);
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(3px);
-          }
         }
       }
     }
@@ -409,24 +398,28 @@ onMounted(() => {
 .menu-contain {
   .item {
     font-size: 15rem;
-    color: #fff;
+    color: #868686;
     border: 1px solid transparent;
     &:not(&:last-child) {
       margin-bottom: 8rem;
     }
 
     &:hover {
-      color: #9c9c9c;
       cursor: pointer;
     }
   }
 
   .active {
     width: max-content;
+    color: #fff;
     border-bottom-color: #fff;
+    transition:
+      border-bottom-color 0.9s ease-in-out,
+      color 0.9s ease-in-out;
 
     &:hover {
-      border-bottom-color: #9c9c9c;
+      color: #fff;
+      border-bottom-color: #fff;
     }
   }
 }

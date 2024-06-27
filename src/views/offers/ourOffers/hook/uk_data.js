@@ -1,5 +1,5 @@
 export const list1 = {
-  all: '150',
+  all: '200',
   arr: [
     {
       name1: 'UAL.',

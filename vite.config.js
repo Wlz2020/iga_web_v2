@@ -13,7 +13,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  build: setupBuild(),
+  build: setupBuild()
   // eslint-disable-next-line no-undef
   // base: process.env.NODE_ENV === 'production' ? '/iga_web_v2/' : '/'
 })

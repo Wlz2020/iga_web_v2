@@ -43,8 +43,8 @@ function onClick() {
         :modules="modules"
         class="swiper-container"
         :slides-per-view="1"
+        :speed="400"
         :grabCursor="true"
-        :pagination="{ clickable: true }"
         :mousewheel="true"
         direction="vertical"
       >

@@ -29,62 +29,62 @@ function onMouseover(flag) {
   currentSchool.value = flag
 
   if (flag === 'other') {
-    circleRef.value.style.transition = 'transform 1.5s ease-in-out'
+    circleRef.value.style.transition = 'transform 1s ease-in-out'
     circleRef.value.style.transform = 'scale(2.8)'
     circleRef.value.style.transformOrigin = '50% 0%'
 
-    usRef.value.style.transition = 'transform 1.5s ease-in-out'
+    usRef.value.style.transition = 'transform 1s ease-in-out'
     usRef.value.style.transform = 'scale(2.8) translate(150rem, 200rem)'
 
-    ukRef.value.style.transition = 'transform 1.5s ease-in-out'
+    ukRef.value.style.transition = 'transform 1s ease-in-out'
     ukRef.value.style.transform = 'scale(2.8) translate(-100rem, 300rem)'
 
-    studioRef.value.style.transition = 'transform 1.5s ease-in-out'
+    studioRef.value.style.transition = 'transform 1s ease-in-out'
     studioRef.value.style.transform = 'scale(2.8) translate(200rem, 400rem)'
   }
 
   if (flag === 'us') {
-    circleRef.value.style.transition = 'transform 1.5s ease-in-out'
+    circleRef.value.style.transition = 'transform 1s ease-in-out'
     circleRef.value.style.transform = 'scale(2.8)'
     circleRef.value.style.transformOrigin = '100% 50%'
 
-    otherRef.value.style.transition = 'transform 1.5s ease-in-out'
+    otherRef.value.style.transition = 'transform 1s ease-in-out'
     otherRef.value.style.transform = 'scale(2.8) translate(-200rem, -200rem)'
 
-    ukRef.value.style.transition = 'transform 1.5s ease-in-out'
+    ukRef.value.style.transition = 'transform 1s ease-in-out'
     ukRef.value.style.transform = 'scale(2.8) translate(-350rem, 0rem)'
 
-    studioRef.value.style.transition = 'transform 1.5s ease-in-out'
+    studioRef.value.style.transition = 'transform 1s ease-in-out'
     studioRef.value.style.transform = 'scale(2.8) translate(0rem, 200rem)'
   }
 
   if (flag === 'uk') {
-    circleRef.value.style.transition = 'transform 1.5s ease-in-out'
+    circleRef.value.style.transition = 'transform 1s ease-in-out'
     circleRef.value.style.transform = 'scale(2.8)'
     circleRef.value.style.transformOrigin = '0% 50%'
 
-    otherRef.value.style.transition = 'transform 1.5s ease-in-out'
+    otherRef.value.style.transition = 'transform 1s ease-in-out'
     otherRef.value.style.transform = 'scale(2.8) translate(200rem, -200rem)'
 
-    usRef.value.style.transition = 'transform 1.5s ease-in-out'
+    usRef.value.style.transition = 'transform 1s ease-in-out'
     usRef.value.style.transform = 'scale(2.8) translate(350rem, 0rem)'
 
-    studioRef.value.style.transition = 'transform 1.5s ease-in-out'
+    studioRef.value.style.transition = 'transform 1s ease-in-out'
     studioRef.value.style.transform = 'scale(2.8) translate(350rem, 200rem)'
   }
 
   if (flag === 'studio') {
-    circleRef.value.style.transition = 'transform 1.5s ease-in-out'
+    circleRef.value.style.transition = 'transform 1s ease-in-out'
     circleRef.value.style.transform = 'scale(2.8)'
     circleRef.value.style.transformOrigin = '50% 100%'
 
-    otherRef.value.style.transition = 'transform 1.5s ease-in-out'
+    otherRef.value.style.transition = 'transform 1s ease-in-out'
     otherRef.value.style.transform = 'scale(2.8) translate(0rem, -450rem)'
 
-    usRef.value.style.transition = 'transform 1.5s ease-in-out'
+    usRef.value.style.transition = 'transform 1s ease-in-out'
     usRef.value.style.transform = 'scale(2.8) translate(150rem, -250rem)'
 
-    ukRef.value.style.transition = 'transform 1.5s ease-in-out'
+    ukRef.value.style.transition = 'transform 1s ease-in-out'
     ukRef.value.style.transform = 'scale(2.8) translate(-100rem, -200rem)'
   }
 }
@@ -92,7 +92,7 @@ function onMouseover(flag) {
 function onMouseout() {
   currentSchool.value = null
 
-  circleRef.value.style.transition = 'transform 1.5s ease-in-out'
+  circleRef.value.style.transition = 'transform 1s ease-in-out'
   circleRef.value.style.transform = ''
 
   usRef.value.style.transform = ''

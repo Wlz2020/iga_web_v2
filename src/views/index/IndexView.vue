@@ -33,6 +33,9 @@ function judgeMenuShowIconStatus() {
 onMounted(() => {
   judgeMenuShowIconStatus()
   judgeCloseLoadingView()
+
+  // 去掉这个就展示loding页面
+  onCloseLoadingView()
 })
 </script>
 

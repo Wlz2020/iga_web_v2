@@ -22,6 +22,11 @@ export const routes = [
             path: '/our-team',
             name: RN.OurTeam,
             component: () => import('@/views/about/ourTeam')
+          },
+          {
+            path: '/our-team',
+            name: RN.ContachUs,
+            component: () => import('@/views/about/contachUs')
           }
         ]
       },
@@ -86,7 +91,7 @@ export const routes = [
             path: '/other-school',
             name: RN.OtherSchool,
             component: () => import('@/views/school/otherSchool')
-          },
+          }
         ]
       }
     ]

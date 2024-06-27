@@ -30,7 +30,6 @@ function onMouseover(flag, item) {
 }
 
 function onClickItem(currentService) {
-  console.log('currentService=', currentService)
   currentServiceDesc.value = currentService.list[0].txt
 
   list.value = list.value.map((item) => {
@@ -57,7 +56,6 @@ function judgeNameClass(item) {
 }
 
 onMounted(() => {
-  console.log('list==', list.value)
   bus.on('bus-show-menu', (v) => {
     addFilterBg.value = v
   })
@@ -108,7 +106,7 @@ onMounted(() => {
                       <img :src="ImgCheckArrow" alt="" />
                     </div>
                     <div
-                      class="name ch_font_light"
+                      class="name pingFang_Medium_font"
                       :class="{ 'active-items-name': currentServiceDesc === items.txt }"
                     >
                       {{ items.name }}
@@ -116,7 +114,7 @@ onMounted(() => {
                   </div>
                 </div>
                 <div class="rigth">
-                  <div class="line2-item-txt ch_font_light">{{ currentServiceDesc }}</div>
+                  <div class="line2-item-txt pingFang_Regular_font">{{ currentServiceDesc }}</div>
                 </div>
               </div>
             </div>
@@ -165,7 +163,7 @@ onMounted(() => {
 
     .item {
       font-size: 15rem;
-      width: 900rem;
+      width: 1000rem;
       word-spacing: 5rem;
       border-bottom: 1px solid #fff;
       display: flex;
@@ -185,7 +183,7 @@ onMounted(() => {
       }
 
       .no-active {
-        opacity: 0.3;
+        // opacity: 0.3;
       }
     }
 
@@ -206,7 +204,7 @@ onMounted(() => {
       }
 
       .no-active {
-        opacity: 0.3;
+        // opacity: 0.3;
       }
 
       .line1 {
@@ -223,7 +221,7 @@ onMounted(() => {
 
         .box {
           display: flex;
-          width: 900rem;
+          width: 1000rem;
 
           .left {
             flex: 1;
@@ -248,7 +246,12 @@ onMounted(() => {
                 white-space: nowrap;
                 margin-left: 20rem;
                 font-size: 15rem;
-                color: #666;
+                color: #868686;
+                transition: color 0.9s ease-in-out;
+
+                &:hover {
+                  color: #fff;
+                }
               }
 
               .active-items-name {
@@ -266,15 +269,15 @@ onMounted(() => {
           }
 
           .rigth {
-            flex: 1.3;
+            flex: 1.2;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding-left: 20rem;
-            padding-right: 0rem;
+            padding-left: 80rem;
+            padding-right: 80rem;
 
             .line2-item-txt {
-              font-size: 15rem;
+              font-size: 13rem;
               line-height: 30rem;
             }
           }
@@ -282,6 +285,12 @@ onMounted(() => {
       }
       .name {
         display: flex;
+        color: #868686;
+        transition: color 0.9s ease-in-out;
+
+        &:hover {
+          color: #fff;
+        }
 
         .title {
           width: 80rem;

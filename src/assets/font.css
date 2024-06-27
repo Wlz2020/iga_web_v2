@@ -33,6 +33,20 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'PingFang_Medium_font';
+  src: url('./font/PingFang_Medium.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PingFang_Regular_font';
+  src: url('./font/PingFang-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .ch_font_light {
   color: #fff;
   font-family: 'ch_font_light';
@@ -56,4 +70,14 @@
 .seven_Segment_font {
   color: #fff;
   font-family: 'seven_Segment_font';
+}
+
+.pingFang_Regular_font {
+  color: #fff;
+  font-family: 'PingFang_Regular_font';
+}
+
+.pingFang_Medium_font {
+  color: #fff;
+  font-family: 'PingFang_Medium_font';
 }

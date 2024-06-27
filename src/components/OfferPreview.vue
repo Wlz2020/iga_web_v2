@@ -5,19 +5,19 @@ import { onMounted, ref } from 'vue'
 import bus from '@/utils/bus'
 
 const list1 = {
-  all: '555',
+  all: '700',
   arr: [
     {
       name: 'U.S.',
-      num: '00300'
+      num: '00400'
     },
     {
       name: 'U.K.',
-      num: '00150'
+      num: '00200'
     },
     {
       name: 'OTHERS',
-      num: '00070'
+      num: '00090'
     }
   ]
 }
@@ -147,9 +147,11 @@ onMounted(() => {
       width: 30%;
     }
     .box2 {
+      font-size: 14rem;
       width: 20%;
     }
     .box3 {
+      font-size: 14rem;
       width: 50%;
       justify-content: flex-end;
     }

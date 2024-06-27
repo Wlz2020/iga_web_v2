@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import bus from '@/utils/bus'
-import videoUrl from '@/assets/image/index/iga_video.mp4'
+import { FILE_RESOURCE_IP } from '@/consts/file_resource_ip'
 
 const addFilterBg = ref(false)
 onMounted(() => {
@@ -14,7 +14,7 @@ onMounted(() => {
 <template>
   <div class="main-view" :class="{ filter: addFilterBg }">
     <video class="video" :autoplay="true" :loop="true" :controls="false" :muted="true">
-      <source :src="videoUrl" type="video/mp4" />
+      <source :src="FILE_RESOURCE_IP + '/files/videos/iga_video.mp4'" type="video/mp4" />
     </video>
   </div>
 </template>

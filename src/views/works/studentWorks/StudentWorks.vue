@@ -11,7 +11,7 @@ import StudentWorksDetail from './detail/StudentWorksDetail.vue'
 import bus from '@/utils/bus'
 import { FILE_RESOURCE_IP } from '@/consts/file_resource_ip'
 
-import { studentWorksList, levels } from './hook/data'
+import { studentWorksList } from './hook/data'
 
 const onSwiper = (swiper) => {
   console.log(swiper)
@@ -28,8 +28,6 @@ const addFilterBg = ref(false)
 const swiperList = ref([])
 
 const reallySwiperList = ref(studentWorksList)
-
-const currentLevel = ref(levels.All)
 
 const currentWork = ref()
 
@@ -50,19 +48,6 @@ function generateSwiperItems(list = []) {
 function initDataList() {
   swiperList.value = generateSwiperItems(reallySwiperList.value)
   console.log(swiperList.value)
-}
-
-function onFilterTeacherByLevel(level) {
-  currentLevel.value = level
-
-  if (level === levels.All) {
-    reallySwiperList.value = studentWorksList
-    initDataList()
-    return
-  }
-
-  reallySwiperList.value = studentWorksList.filter((item) => item.level === level)
-  initDataList()
 }
 
 const instance = getCurrentInstance()
@@ -93,7 +78,7 @@ onMounted(() => {
   <div class="our-team-view en_font_bold" :class="{ filter: addFilterBg }">
     <IconClose @click="onGoHome()" class="close-icon"></IconClose>
     <div class="content">
-      <div class="filter-box">
+      <!-- <div class="filter-box">
         <div class="name">FILTER</div>
         <div class="filter-list">
           <div
@@ -106,14 +91,14 @@ onMounted(() => {
             {{ level }}
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="swiper-box">
         <swiper
           :modules="modules"
           class="swiper-container"
           :slides-per-view="1"
+          :speed="400"
           :grabCursor="true"
-          :pagination="{ clickable: true }"
           :mousewheel="true"
           @swiper="onSwiper"
           direction="vertical"
@@ -158,8 +143,8 @@ onMounted(() => {
 </template>
 
 <style scoped lang="less">
-@modalWidth: 1200rem;
-@modalHeight: 500rem;
+@modalWidth: 1500rem;
+@modalHeight: 600rem;
 
 .our-team-view {
   position: absolute;
@@ -172,7 +157,7 @@ onMounted(() => {
 
   .close-icon {
     position: absolute;
-    top: 0;
+    top: 40rem;
     right: 0;
     z-index: 2;
   }
@@ -214,7 +199,7 @@ onMounted(() => {
     }
 
     .swiper-box {
-      flex: 7;
+      flex: 1;
       height: 100%;
     }
   }
@@ -226,7 +211,7 @@ onMounted(() => {
 
   :deep(.swiper-pagination) {
     top: unset;
-    bottom: 2%;
+    bottom: 1%;
 
     .swiper-pagination-bullet {
       opacity: 1;
@@ -250,12 +235,12 @@ onMounted(() => {
 }
 
 .teacher-info-item-box {
-  width: 32.5%;
+  width: 33.3%;
   display: flex;
-  align-items: flex-start;
-  padding-top: 40rem;
-  padding-right: 26rem;
+  align-items: center;
+  justify-content: center;
   position: relative;
+  padding-top: 20rem;
 
   &:hover {
     cursor: pointer;
@@ -263,7 +248,7 @@ onMounted(() => {
 }
 
 .teacher-info-item {
-  height: calc(243rem / 1.3);
+  height: calc(243rem / 1.1);
 
   img {
     object-fit: cover;
@@ -273,7 +258,7 @@ onMounted(() => {
 .teacher-info-item-tips {
   position: absolute;
   width: 100%;
-  height: calc(243rem / 1.3);
+  height: calc(243rem / 1.1);
   width: 93%;
   background-color: #000;
   line-height: 30rem;

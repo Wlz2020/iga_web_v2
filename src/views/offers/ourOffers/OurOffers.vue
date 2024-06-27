@@ -45,7 +45,7 @@ onMounted(() => {
       :modules="modules"
       class="swiper-container"
       :slides-per-view="1"
-      :pagination="{ clickable: true }"
+      :speed="400"
       :mousewheel="true"
       :grabCursor="true"
       direction="vertical"
@@ -64,17 +64,6 @@ onMounted(() => {
         <OtherOfferPreview></OtherOfferPreview>
       </swiper-slide>
     </swiper>
-
-    <div class="tip">
-      <div class="arrow-container en_font_bold">
-        <div class="first-arrow">
-          <Icon :type="currentIndex === 3 ? '' : 'ios-arrow-down'" />
-        </div>
-        <div>
-          <Icon :type="currentIndex === 3 ? '' : 'ios-arrow-down'" />
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 

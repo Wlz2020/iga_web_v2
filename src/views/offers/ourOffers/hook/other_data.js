@@ -1,5 +1,5 @@
 export const list1 = {
-  all: '70',
+  all: '90',
   arr: [
     {
       name1: 'RMIT.',

@@ -26,7 +26,7 @@ import ismobile from '@/utils/ismobile'
       // rem = docEL.clientWidth / 350
       rem = docEL.clientWidth / 600
     } else {
-      rem = docEL.clientWidth / 1500
+      rem = docEL.clientWidth / 1920
     }
 
     docEL.style.fontSize = rem + 'px'

@@ -1,5 +1,5 @@
 <script setup>
-import loadingView from '@/assets/image/index/iga_web_loading.gif'
+import { FILE_RESOURCE_IP } from '@/consts/file_resource_ip'
 import { defineEmits } from 'vue'
 
 const emit = defineEmits(['close-loading-view'])
@@ -12,11 +12,11 @@ function onClick() {
 <template>
   <div class="load-wrap">
     <div class="size100 load-img">
-      <img :src="loadingView" />
+      <img :src="FILE_RESOURCE_IP + '/files/images/common/iga_web_loading.gif'" />
     </div>
 
     <div class="font text-wrap en_font_bold">
-      <span class="animate__animated animate__zoomIn" @click="onClick">START YOUR NEXT LEVEN</span>
+      <span class="animate__animated animate__zoomIn" @click="onClick">START YOUR NEXT LEVEL</span>
     </div>
   </div>
 </template>
@@ -38,7 +38,7 @@ function onClick() {
     position: absolute;
     text-align: center;
     width: 100%;
-    bottom: 2vh;
+    bottom: 3vh;
 
     span {
       position: relative;
@@ -48,6 +48,7 @@ function onClick() {
       font-weight: bold;
       color: #454545;
       word-spacing: 4rem;
+      transition: color 0.5s ease-in-out;
 
       &:hover {
         &::before {
@@ -61,6 +62,7 @@ function onClick() {
           position: absolute;
           right: 0;
         }
+
         color: #fff;
         cursor: pointer;
       }
